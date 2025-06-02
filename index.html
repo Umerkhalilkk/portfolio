@@ -6,40 +6,42 @@
   <title>Muhammad Umer | Robotics & AI Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+    /* Reset and base styles */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
       font-family: 'Outfit', sans-serif;
-      background: #0e0e10;
-      color: #e5e5e5;
-      overflow-x: hidden;
+      background: #ffffff;
+      color: #333333;
+      line-height: 1.6;
     }
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(14,14,16,0.95);
+      background: rgba(255, 255, 255, 0.9);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 1000;
     }
     nav h1 {
       font-weight: 700;
-      color: #00f0ff;
-      font-size: 1.2rem;
+      color: #007acc;
+      font-size: 1.5rem;
     }
     nav a {
       margin-left: 1.5rem;
-      color: #ccc;
+      color: #333333;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #00f0ff;
+      color: #007acc;
     }
     header {
       height: 100vh;
@@ -49,33 +51,28 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      animation: fadeIn 2s ease-in-out;
+      padding: 0 2rem;
     }
     header h2 {
       font-size: 3rem;
-      color: #fff;
-      text-shadow: 0 0 10px #00f0ff55;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(0, 122, 204, 0.5);
     }
     header p {
       font-size: 1.2rem;
       margin-top: 1rem;
-      color: #ccc;
+      color: #f0f0f0;
     }
-
     section {
       padding: 5rem 2rem;
       max-width: 1100px;
       margin: auto;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 1s forwards;
     }
-    section:nth-child(even) { background: #121216; }
     section h2 {
       text-align: center;
       font-size: 2.5rem;
       margin-bottom: 2rem;
-      color: #00f0ff;
+      color: #007acc;
     }
     .about p {
       text-align: center;
@@ -89,14 +86,14 @@
       gap: 2rem;
     }
     .project {
-      background: #1c1c1f;
+      background: #f9f9f9;
       padding: 1rem;
       border-radius: 12px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .project:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 10px #00f0ff55;
+      box-shadow: 0 0 10px rgba(0, 122, 204, 0.2);
     }
     .project img {
       max-width: 100%;
@@ -105,35 +102,29 @@
     }
     .project h3 {
       font-size: 1.2rem;
-      color: #00f0ff;
+      color: #007acc;
     }
     .contact {
       text-align: center;
     }
     .contact p, .contact a {
       font-size: 1rem;
-      color: #ccc;
+      color: #333333;
     }
     .contact a {
-      color: #00f0ff;
+      color: #007acc;
       text-decoration: none;
     }
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
-      color: #777;
+      color: #777777;
     }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+    @media (max-width: 768px) {
+      header h2 {
+        font-size: 2rem;
       }
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
@@ -153,14 +144,14 @@
     <p>Robotics | AI | Design</p>
   </header>
 
-  <section id="about" class="about" style="animation-delay: 0.5s;">
+  <section id="about" class="about">
     <h2>About Me</h2>
     <p>
       I'm a student of Robotics and Intelligent Systems with a passion for building, designing, and innovating. My work spans robotic arms, AI-driven systems, and CAD-based product designs. I blend creativity with technology to solve real-world problems.
     </p>
   </section>
 
-  <section id="projects" class="projects" style="animation-delay: 1s;">
+  <section id="projects" class="projects">
     <h2>Projects</h2>
     <div class="projects">
       <div class="project">
@@ -181,7 +172,7 @@
     </div>
   </section>
 
-  <section id="contact" class="contact" style="animation-delay: 1.5s;">
+  <section id="contact" class="contact">
     <h2>Contact</h2>
     <p>📧 Email: <a href="mailto:mumer.dev@gmail.com">mumer.dev@gmail.com</a></p>
     <p>🔗 Instagram: <a href="https://instagram.com/mumer.dev" target="_blank">@mumer.dev</a></p>
