@@ -2,245 +2,195 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Umer Khalil - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Muhammad Umer | Robotics & AI Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset and base styles */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
-      min-height: 100vh;
-      scroll-behavior: smooth;
+      font-family: 'Outfit', sans-serif;
+      background: #0e0e10;
+      color: #e5e5e5;
+      overflow-x: hidden;
     }
-    a {
-      color: #00ffc8;
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(14,14,16,0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 999;
+    }
+    nav h1 {
+      font-weight: 700;
+      color: #00f0ff;
+      font-size: 1.2rem;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      color: #ccc;
       text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
     }
-    a:hover {
-      text-decoration: underline;
+    nav a:hover {
+      color: #00f0ff;
     }
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-    }
-    /* Glassmorphism card style */
-    .glass-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      padding: 2rem;
-      margin-bottom: 3rem;
-    }
-    /* Header */
     header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.3rem;
-      color: #00ffc8;
-    }
-    header p {
-      font-size: 1.3rem;
-      font-weight: 300;
-      color: #a0f0dc;
-    }
-    /* Sections */
-    section {
-      margin-bottom: 4rem;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid #00ffc8;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-    /* Projects grid */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 2rem;
-    }
-    .project-card {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 15px;
-      padding: 1.5rem;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0,255,200,0.1);
-    }
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(0,255,200,0.5);
-    }
-    .project-title {
-      font-weight: 600;
-      font-size: 1.25rem;
-      margin-bottom: 0.8rem;
-      color: #00ffc8;
-    }
-    /* Skills */
-    .skill {
-      margin-bottom: 1rem;
-    }
-    .skill-name {
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-    }
-    .skill-bar {
-      background: rgba(255,255,255,0.2);
-      border-radius: 20px;
-      overflow: hidden;
-      height: 15px;
-    }
-    .skill-level {
-      height: 100%;
-      background: #00ffc8;
-      border-radius: 20px;
-      width: 0%;
-      transition: width 1.5s ease-in-out;
-    }
-    /* Contact form */
-    form {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1632410646945-50dcaf9cc08b?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
     }
-    input, textarea {
-      padding: 0.7rem 1rem;
-      margin-bottom: 1rem;
-      border-radius: 10px;
-      border: none;
-      outline: none;
-      font-size: 1rem;
+    header h2 {
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 0 0 10px #00f0ff55;
     }
-    textarea {
-      resize: vertical;
-      min-height: 100px;
+    header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #ccc;
     }
-    button {
-      background: #00ffc8;
-      border: none;
+
+    section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s forwards;
+    }
+    section:nth-child(even) { background: #121216; }
+    section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #00f0ff;
+    }
+    .about p {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project {
+      background: #1c1c1f;
       padding: 1rem;
-      font-weight: 600;
-      border-radius: 10px;
-      cursor: pointer;
-      color: #000;
-      transition: background 0.3s ease;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    button:hover {
-      background: #00cc9a;
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 10px #00f0ff55;
     }
-    /* Footer */
+    .project img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+    .project h3 {
+      font-size: 1.2rem;
+      color: #00f0ff;
+    }
+    .contact {
+      text-align: center;
+    }
+    .contact p, .contact a {
+      font-size: 1rem;
+      color: #ccc;
+    }
+    .contact a {
+      color: #00f0ff;
+      text-decoration: none;
+    }
     footer {
       text-align: center;
-      margin-top: 4rem;
+      padding: 2rem;
       font-size: 0.9rem;
-      color: #66f0c9;
+      color: #777;
     }
-    /* Responsive */
-    @media(max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      main {
-        padding: 1rem;
-      }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Umer Khalil</h1>
-  <p>Robotics & AI Enthusiast | Portfolio</p>
-</header>
+  <nav>
+    <h1>Muhammad Umer</h1>
+    <div>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-<main>
-  <section id="about" class="glass-card">
+  <header>
+    <h2>Hi, I'm Muhammad Umer</h2>
+    <p>Robotics | AI | Design</p>
+  </header>
+
+  <section id="about" class="about" style="animation-delay: 0.5s;">
     <h2>About Me</h2>
-    <p>Hi! I'm Umer Khalil, a passionate robotics and AI student. I love designing innovative projects, programming smart algorithms, and sharing my work with the world.</p>
+    <p>
+      I'm a student of Robotics and Intelligent Systems with a passion for building, designing, and innovating. My work spans robotic arms, AI-driven systems, and CAD-based product designs. I blend creativity with technology to solve real-world problems.
+    </p>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="projects" style="animation-delay: 1s;">
     <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-title">Robotic Arm Control</div>
-        <p>Arduino-based control system for a robotic arm with precise movement.</p>
+    <div class="projects">
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1605971861296-5a64f730abf1?auto=format&fit=crop&w=800&q=80" alt="Robotic Arm">
+        <h3>Robotic Arm</h3>
+        <p>3D-modeled and Arduino controlled robotic arm with servo precision.</p>
       </div>
-      <div class="project-card">
-        <div class="project-title">Line Following Robot</div>
-        <p>Autonomous robot that follows a path using IR sensors.</p>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e8a6c2975a0?auto=format&fit=crop&w=800&q=80" alt="Combat Robot">
+        <h3>Combat Robot</h3>
+        <p>Designed a destructive mini battle-bot tested in competitive arena setup.</p>
       </div>
-      <div class="project-card">
-        <div class="project-title">AI Obstacle Avoidance</div>
-        <p>Machine learning-based algorithm for dynamic obstacle avoidance.</p>
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1608921919760-85f13b261685?auto=format&fit=crop&w=800&q=80" alt="Smart Product Render">
+        <h3>Tech Product Render</h3>
+        <p>Futuristic product design rendered in Blender and SolidWorks Visualize.</p>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="glass-card">
-    <h2>Skills</h2>
-    <div class="skill">
-      <div class="skill-name">Arduino & Embedded C</div>
-      <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">Python & AI</div>
-      <div class="skill-bar"><div class="skill-level" style="width: 75%;"></div></div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">CAD & 3D Design</div>
-      <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
-    </div>
+  <section id="contact" class="contact" style="animation-delay: 1.5s;">
+    <h2>Contact</h2>
+    <p>📧 Email: <a href="mailto:mumer.dev@gmail.com">mumer.dev@gmail.com</a></p>
+    <p>🔗 Instagram: <a href="https://instagram.com/mumer.dev" target="_blank">@mumer.dev</a></p>
+    <p>💼 LinkedIn: <a href="https://linkedin.com/in/umer-khalil" target="_blank">linkedin.com/in/umer-khalil</a></p>
   </section>
 
-  <section id="contact" class="glass-card">
-    <h2>Contact Me</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-</main>
-
-<footer>
-  &copy; 2025 Umer Khalil
-</footer>
-
-<script>
-  // Animate skill bars on scroll
-  function animateSkills() {
-    const skills = document.querySelectorAll('.skill-level');
-    const triggerPoint = window.innerHeight * 0.8;
-    skills.forEach(skill => {
-      const rect = skill.getBoundingClientRect();
-      if(rect.top < triggerPoint) {
-        skill.style.width = skill.style.width || skill.getAttribute('style').match(/width: (\d+%)/)[1];
-      }
-    });
-  }
-  window.addEventListener('scroll', animateSkills);
-  window.addEventListener('load', animateSkills);
-
-  // Simple form submission alert (can be extended to backend)
-  document.getElementById('contactForm').addEventListener('submit', e => {
-    e.preventDefault();
-    alert('Thanks for reaching out, I will get back to you soon!');
-    e.target.reset();
-  });
-</script>
+  <footer>
+    &copy; 2025 Muhammad Umer. Robotics & Design Portfolio.
+  </footer>
 
 </body>
 </html>
