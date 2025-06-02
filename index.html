@@ -2,62 +2,245 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Muhammad Umer | Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Umer Khalil - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #00ffc8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    /* Glassmorphism card style */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.3rem;
+      color: #00ffc8;
+    }
+    header p {
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: #a0f0dc;
+    }
+    /* Sections */
+    section {
+      margin-bottom: 4rem;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #00ffc8;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+    /* Projects grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,255,200,0.1);
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0,255,200,0.5);
+    }
+    .project-title {
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 0.8rem;
+      color: #00ffc8;
+    }
+    /* Skills */
+    .skill {
+      margin-bottom: 1rem;
+    }
+    .skill-name {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+    .skill-bar {
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      overflow: hidden;
+      height: 15px;
+    }
+    .skill-level {
+      height: 100%;
+      background: #00ffc8;
+      border-radius: 20px;
+      width: 0%;
+      transition: width 1.5s ease-in-out;
+    }
+    /* Contact form */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea {
+      padding: 0.7rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    button {
+      background: #00ffc8;
+      border: none;
+      padding: 1rem;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #000;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #00cc9a;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #66f0c9;
+    }
+    /* Responsive */
+    @media(max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      main {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Muhammad Umer</h1>
-      <p>Robotics Engineer & AI Developer</p>
-    </div>
-  </header>
 
-  <section class="about" data-aos="fade-up">
+<header>
+  <h1>Umer Khalil</h1>
+  <p>Robotics & AI Enthusiast | Portfolio</p>
+</header>
+
+<main>
+  <section id="about" class="glass-card">
     <h2>About Me</h2>
-    <p>I’m passionate about building smart robotics systems and developing AI-driven automation. Currently pursuing a Bachelor's in Robotics and Intelligent Systems. I design, code, and create with impact.</p>
+    <p>Hi! I'm Umer Khalil, a passionate robotics and AI student. I love designing innovative projects, programming smart algorithms, and sharing my work with the world.</p>
   </section>
 
-  <section class="projects" data-aos="fade-right">
+  <section id="projects">
     <h2>Projects</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>Line-Following Robot</h3>
-        <p>Arduino + Sensors based autonomous robot following black paths.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-title">Robotic Arm Control</div>
+        <p>Arduino-based control system for a robotic arm with precise movement.</p>
       </div>
-      <div class="card">
-        <h3>Combat Robot Design</h3>
-        <p>CAD + SolidWorks project for a high-impact robot design.</p>
+      <div class="project-card">
+        <div class="project-title">Line Following Robot</div>
+        <p>Autonomous robot that follows a path using IR sensors.</p>
+      </div>
+      <div class="project-card">
+        <div class="project-title">AI Obstacle Avoidance</div>
+        <p>Machine learning-based algorithm for dynamic obstacle avoidance.</p>
       </div>
     </div>
   </section>
 
-  <section class="skills" data-aos="fade-left">
+  <section id="skills" class="glass-card">
     <h2>Skills</h2>
-    <ul>
-      <li>Arduino & Sensors</li>
-      <li>Python / AI Algorithms</li>
-      <li>SolidWorks, CAD</li>
-      <li>ROS, Robotics Systems</li>
-    </ul>
+    <div class="skill">
+      <div class="skill-name">Arduino & Embedded C</div>
+      <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Python & AI</div>
+      <div class="skill-bar"><div class="skill-level" style="width: 75%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">CAD & 3D Design</div>
+      <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
+    </div>
   </section>
 
-  <section class="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>Let’s connect! Email me at <a href="mailto:umerrkhalilkk@gmail.com">umerrkhalilkk@gmail.com</a></p>
+  <section id="contact" class="glass-card">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
+</main>
 
-  <footer>
-    <p>© 2025 Muhammad Umer. All rights reserved.</p>
-  </footer>
+<footer>
+  &copy; 2025 Umer Khalil
+</footer>
 
-  <script>
-    AOS.init();
-  </script>
+<script>
+  // Animate skill bars on scroll
+  function animateSkills() {
+    const skills = document.querySelectorAll('.skill-level');
+    const triggerPoint = window.innerHeight * 0.8;
+    skills.forEach(skill => {
+      const rect = skill.getBoundingClientRect();
+      if(rect.top < triggerPoint) {
+        skill.style.width = skill.style.width || skill.getAttribute('style').match(/width: (\d+%)/)[1];
+      }
+    });
+  }
+  window.addEventListener('scroll', animateSkills);
+  window.addEventListener('load', animateSkills);
+
+  // Simple form submission alert (can be extended to backend)
+  document.getElementById('contactForm').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Thanks for reaching out, I will get back to you soon!');
+    e.target.reset();
+  });
+</script>
+
 </body>
 </html>
